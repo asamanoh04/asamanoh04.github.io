@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andres Samano Hakim | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: rgba(255, 255, 255, 0.9);
+      --panel-strong: rgba(28, 78, 119, 0.12);
+      --text: #152033;
+      --muted: #4a5b73;
+      --accent: #1e9f6e;
+      --accent-2: #3d7bf6;
+      --radius: 18px;
+      --shadow: 0 12px 36px rgba(17, 39, 82, 0.16);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 18% 20%, rgba(61, 123, 246, 0.12) 0, transparent 28%), radial-gradient(circle at 80% 10%, rgba(30, 159, 110, 0.16) 0, transparent 30%), radial-gradient(circle at 72% 78%, rgba(90, 125, 255, 0.12) 0, transparent 32%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 48px 20px 96px;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--panel);
+      border: 1px solid var(--panel-strong);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      width: fit-content;
+      box-shadow: var(--shadow);
+    }
+    .pulse {
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 0 0 rgba(30, 159, 110, 0.28);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(30, 159, 110, 0.28); }
+      70% { box-shadow: 0 0 0 12px rgba(30, 159, 110, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(30, 159, 110, 0); }
+    }
+    h1 {
+      font-family: 'Space Grotesk', 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: clamp(38px, 6vw, 64px);
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    .hero {
+      display: grid;
+      gap: 16px;
+      max-width: 720px;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-strong);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .tag {
+      padding: 8px 12px;
+      border-radius: 14px;
+      background: rgba(61, 123, 246, 0.08);
+      color: var(--text);
+      border: 1px solid rgba(61, 123, 246, 0.35);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+    .section-title {
+      margin: 42px 0 16px;
+      font-size: 20px;
+      letter-spacing: 0.4px;
+      color: var(--text);
+    }
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(28, 78, 119, 0.12);
+    }
+    .timeline-item strong { color: var(--accent); }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: linear-gradient(120deg, rgba(30, 159, 110, 0.12), rgba(61, 123, 246, 0.16));
+      border: 1px solid rgba(30, 159, 110, 0.35);
+      border-radius: 999px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .link:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    footer {
+      margin-top: 54px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 680px) {
+      body { padding: 32px 18px 70px; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .timeline-item .time { color: var(--muted); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="badge"><span class="pulse"></span> Andres Samano Hakim</div>
+      <div class="hero">
+        <h1>Diseñando el camino hacia la tecnologia que crea oportunidades.</h1>
+        <p>Tengo 21 anios y estudio en el ITAM (Instituto Tecnologico Autonomo de Mexico). Me mueven los retos donde la tecnologia resuelve problemas reales: productos eficientes, datos accionables y experiencias que se sienten bien pensadas.</p>
+        <div class="links">
+          <a class="link" href="mailto:asamanoh@itam.mx" aria-label="Enviar correo a Andres Samano Hakim">Hablemos</a>
+          <a class="link" href="https://asamanoh04.github.io/" target="_blank" rel="noreferrer" aria-label="Ver GitHub Pages de Andres Samano Hakim">GitHub Page</a>
+        </div>
+      </div>
+    </header>
+
+    <h2 class="section-title">Enfoque y fortalezas</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Producto + Ingenieria</h3>
+        <p>Traduzco necesidades en soluciones concretas: defino objetivos claros, prototipo rapido y entrego implementaciones que se pueden mantener.</p>
+        <div class="tag-row">
+          <span class="tag">Prototipado</span>
+          <span class="tag">Sistemas sencillos</span>
+          <span class="tag">Iteracion rapida</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Datos accionables</h3>
+        <p>Busco respuestas en los datos: desde limpiar y analizar hasta comunicar hallazgos con claridad para decidir mejor.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">Modelos ligeros</span>
+          <span class="tag">Dashboards</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Experiencia pensada</h3>
+        <p>Cuido la experiencia completa: simplicidad visual, micro-interacciones utiles y mensajes claros que guian al usuario.</p>
+        <div class="tag-row">
+          <span class="tag">UI clara</span>
+          <span class="tag">Accesibilidad</span>
+          <span class="tag">Historias de usuario</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Trayectoria reciente</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">2024 - 2025</div>
+        <div>
+          <strong>Estudiante en ITAM</strong> — Enfasis en tecnologia aplicada, estadistica y optimizacion para producto digital.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2023 - 2024</div>
+        <div>
+          <strong>Proyectos de practica</strong> — Automatizacion de tareas, analisis de datos y exploraciones con interfaces web.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Siempre</div>
+        <div>
+          <strong>Aprendizaje continuo</strong> — Comunidades tecnicas, lecturas sobre producto y experimentos rapidos con nuevas herramientas.
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Que puedo aportar</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Entrega confiable</h3>
+        <p>Organizo el trabajo en entregables claros, con comunicacion transparente y medicion de impacto.</p>
+      </div>
+      <div class="card">
+        <h3>Vision sistemica</h3>
+        <p>Conecto la perspectiva de negocio con la tecnica para priorizar lo que realmente mueve la aguja.</p>
+      </div>
+      <div class="card">
+        <h3>Colaboracion directa</h3>
+        <p>Me gusta trabajar codo a codo: feedback rapido, documentacion breve y decisiones informadas.</p>
+      </div>
+    </div>
+
+    <footer>
+      Listo para colaborar en proyectos que combinen ingenieria, datos y experiencia de usuario. Hablemos.
+    </footer>
+  </div>
+</body>
+</html>
