@@ -1,23 +1,23 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Andres Samano Hakim | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f7fb;
-      --panel: rgba(255, 255, 255, 0.9);
+      --bg: #f7f9fd;
+      --panel: rgba(255, 255, 255, 0.95);
       --panel-strong: rgba(28, 78, 119, 0.12);
-      --text: #152033;
+      --text: #0f1f33;
       --muted: #4a5b73;
       --accent: #1e9f6e;
       --accent-2: #3d7bf6;
       --radius: 18px;
-      --shadow: 0 12px 36px rgba(17, 39, 82, 0.16);
+      --shadow: 0 16px 48px rgba(17, 39, 82, 0.16);
     }
     * { box-sizing: border-box; }
     body {
@@ -35,7 +35,7 @@
     header {
       display: grid;
       gap: 18px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .top-bar {
       display: flex;
@@ -52,32 +52,30 @@
       border: 1px solid var(--panel-strong);
       padding: 10px 14px;
       border-radius: 999px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.4px;
       width: fit-content;
       box-shadow: var(--shadow);
     }
     .nav {
       display: inline-flex;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
+      flex-wrap: wrap;
     }
-    .nav a {
+    .nav button {
       padding: 10px 12px;
       border-radius: 999px;
-      text-decoration: none;
+      border: 1px solid rgba(28, 78, 119, 0.14);
+      background: rgba(255, 255, 255, 0.92);
       color: var(--text);
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.1px;
-      border: 1px solid rgba(28, 78, 119, 0.12);
-      background: rgba(255, 255, 255, 0.9);
-      transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
     }
-    .nav a:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-      border-color: rgba(30, 159, 110, 0.35);
-    }
+    .nav button:hover { transform: translateY(-1px); box-shadow: var(--shadow); border-color: rgba(30, 159, 110, 0.35); }
+    .nav button.active { background: linear-gradient(120deg, rgba(30, 159, 110, 0.18), rgba(61, 123, 246, 0.18)); border-color: rgba(30, 159, 110, 0.35); }
     .pulse {
       width: 10px;
       height: 10px;
@@ -111,30 +109,39 @@
       font-size: 18px;
       line-height: 1.6;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 32px;
+    .sections {
+      margin-top: 12px;
     }
-    .card {
+    .section {
+      display: none;
       background: var(--panel);
       border: 1px solid var(--panel-strong);
       border-radius: var(--radius);
-      padding: 20px 22px;
+      padding: 24px 22px 28px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(6px);
     }
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      letter-spacing: -0.01em;
+    .section.active { display: block; }
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: 0.4px;
     }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
     }
+    .card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(28, 78, 119, 0.12);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow);
+    }
+    .card h3 { margin: 0 0 6px; font-size: 17px; letter-spacing: -0.01em; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.55; }
     .tag-row {
       display: flex;
       flex-wrap: wrap;
@@ -151,24 +158,19 @@
       font-size: 13px;
       letter-spacing: 0.2px;
     }
-    .section-title {
-      margin: 42px 0 16px;
-      font-size: 20px;
-      letter-spacing: 0.4px;
-      color: var(--text);
-    }
     .timeline {
       display: grid;
       gap: 14px;
+      margin-top: 12px;
     }
     .timeline-item {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 14px;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
       align-items: start;
-      padding: 16px 18px;
+      padding: 16px 16px;
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid rgba(28, 78, 119, 0.12);
     }
     .timeline-item strong { color: var(--accent); }
@@ -193,12 +195,50 @@
       transition: transform 150ms ease, box-shadow 150ms ease;
     }
     .link:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .logo-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+      align-items: center;
+    }
+    .logo-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(28, 78, 119, 0.12);
+      border-radius: var(--radius);
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      box-shadow: var(--shadow);
+    }
+    .logo-card img {
+      max-width: 140px;
+      max-height: 80px;
+      object-fit: contain;
+    }
+    .certs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .cert {
+      border: 1px solid rgba(28, 78, 119, 0.12);
+      background: rgba(255, 255, 255, 0.94);
+      padding: 14px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .cert strong { display: block; margin-bottom: 6px; }
     footer {
-      margin-top: 54px;
+      margin-top: 22px;
       color: var(--muted);
       font-size: 14px;
+      text-align: center;
     }
-    @media (max-width: 680px) {
+    @media (max-width: 720px) {
       body { padding: 32px 18px 70px; }
       .timeline-item { grid-template-columns: 1fr; }
       .timeline-item .time { color: var(--muted); }
@@ -206,99 +246,181 @@
   </style>
 </head>
 <body>
-  <div class="page" id="home">
+  <div class="page">
     <header>
       <div class="top-bar">
         <div class="badge"><span class="pulse"></span> Andres Samano Hakim</div>
-        <nav class="nav" aria-label="Navegacion principal">
-          <a href="#home">Home</a>
-          <a href="#education">Education</a>
-          <a href="#skills">Skill</a>
-          <a href="#contact">Contact Me</a>
+        <nav class="nav" aria-label="Main navigation">
+          <button data-target="home" class="active">Home</button>
+          <button data-target="education">Education</button>
+          <button data-target="skills">Skill</button>
+          <button data-target="contact">Contact Me</button>
         </nav>
       </div>
       <div class="hero">
-        <h1>Disenando el camino hacia la tecnologia que crea oportunidades.</h1>
-        <p>Tengo 21 anios y estudio en el ITAM (Instituto Tecnologico Autonomo de Mexico). Me mueven los retos donde la tecnologia resuelve problemas reales: productos eficientes, datos accionables y experiencias que se sienten bien pensadas.</p>
+        <h1>Designing technology that creates opportunities.</h1>
+        <p>I am 21 years old and study at ITAM (Instituto Tecnologico Autonomo de Mexico). I enjoy building clear, effective solutions where tech solves real problems: efficient products, actionable data, and thoughtful experiences.</p>
         <div class="links">
-          <a class="link" href="mailto:asamanoh@itam.mx" aria-label="Enviar correo a Andres Samano Hakim">Hablemos</a>
-          <a class="link" href="https://asamanoh04.github.io/" target="_blank" rel="noreferrer" aria-label="Ver GitHub Pages de Andres Samano Hakim">GitHub Page</a>
+          <a class="link" href="mailto:asamanoh@itam.mx" aria-label="Email Andres Samano Hakim">Let us talk</a>
+          <a class="link" href="https://asamanoh04.github.io/" target="_blank" rel="noreferrer" aria-label="View GitHub Page of Andres Samano Hakim">GitHub Page</a>
         </div>
       </div>
     </header>
 
-    <h2 class="section-title" id="skills">Enfoque y fortalezas</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Producto + Ingenieria</h3>
-        <p>Traduzco necesidades en soluciones concretas: defino objetivos claros, prototipo rapido y entrego implementaciones que se pueden mantener.</p>
-        <div class="tag-row">
-          <span class="tag">Prototipado</span>
-          <span class="tag">Sistemas sencillos</span>
-          <span class="tag">Iteracion rapida</span>
+    <div class="sections">
+      <section class="section active" id="home" data-section="home">
+        <h2>About</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Product mindset</h3>
+            <p>I translate needs into clear goals, prototype quickly, and ship maintainable solutions.</p>
+            <div class="tag-row">
+              <span class="tag">Rapid iteration</span>
+              <span class="tag">Lean systems</span>
+              <span class="tag">User focus</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Data-driven</h3>
+            <p>From cleaning and analysis to concise storytelling so teams can decide faster.</p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">EDA</span>
+              <span class="tag">Dashboards</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Polished experiences</h3>
+            <p>I care about clarity, accessibility, and micro-interactions that guide users smoothly.</p>
+            <div class="tag-row">
+              <span class="tag">UX details</span>
+              <span class="tag">Accessibility</span>
+              <span class="tag">Clear copy</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <h3>Datos accionables</h3>
-        <p>Busco respuestas en los datos: desde limpiar y analizar hasta comunicar hallazgos con claridad para decidir mejor.</p>
-        <div class="tag-row">
-          <span class="tag">Python</span>
-          <span class="tag">Modelos ligeros</span>
-          <span class="tag">Dashboards</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Experiencia pensada</h3>
-        <p>Cuido la experiencia completa: simplicidad visual, micro-interacciones utiles y mensajes claros que guian al usuario.</p>
-        <div class="tag-row">
-          <span class="tag">UI clara</span>
-          <span class="tag">Accesibilidad</span>
-          <span class="tag">Historias de usuario</span>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <h2 class="section-title" id="education">Trayectoria reciente</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="time">2024 - 2025</div>
-        <div>
-          <strong>Estudiante en ITAM</strong> — Enfasis en tecnologia aplicada, estadistica y optimizacion para producto digital.
+      <section class="section" id="education" data-section="education">
+        <h2>Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="time">Aug 2019 - Jun 2022</div>
+            <div>
+              <strong>Instituto Oxford (High School)</strong> — GPA 93.7/100.
+              <ul>
+                <li>National Math Contest A.N. Kolmogorov participant.</li>
+                <li>Metropolitan Math Contest (CDMX) participant.</li>
+                <li>LIDERA National Award (Math category) — 2nd place.</li>
+                <li>Varsity soccer team player.</li>
+                <li>AP Calculus class, passed College Board exam.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">Aug 2022 - Present</div>
+            <div>
+              <strong>Instituto Tecnologico Autonomo de Mexico (ITAM)</strong> — B.S. in Data Science.
+              <ul>
+                <li>Public Relations department team member.</li>
+                <li>Studied core software engineering: DS, Algorithms, Relational DB, Non Relational DB, AI, Discrete Math, etc.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="time">Jan 2025 - Jun 2025</div>
+            <div>
+              <strong>Universidade Catolica Portuguesa</strong> — Academic exchange.
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="time">2023 - 2024</div>
-        <div>
-          <strong>Proyectos de practica</strong> — Automatizacion de tareas, analisis de datos y exploraciones con interfaces web.
+        <div class="logo-row" aria-label="School logos">
+          <div class="logo-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/University_of_Oxford_coat_of_arms.svg" alt="Oxford emblem">
+          </div>
+          <div class="logo-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/ITAM_logo.svg" alt="ITAM logo">
+          </div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="time">Siempre</div>
-        <div>
-          <strong>Aprendizaje continuo</strong> — Comunidades tecnicas, lecturas sobre producto y experimentos rapidos con nuevas herramientas.
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <h2 class="section-title" id="contact">Que puedo aportar</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Entrega confiable</h3>
-        <p>Organizo el trabajo en entregables claros, con comunicacion transparente y medicion de impacto.</p>
-      </div>
-      <div class="card">
-        <h3>Vision sistemica</h3>
-        <p>Conecto la perspectiva de negocio con la tecnica para priorizar lo que realmente mueve la aguja.</p>
-      </div>
-      <div class="card">
-        <h3>Colaboracion directa</h3>
-        <p>Me gusta trabajar codo a codo: feedback rapido, documentacion breve y decisiones informadas.</p>
-      </div>
+      <section class="section" id="skills" data-section="skills">
+        <h2>Skill</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Data & Analytics</h3>
+            <p>Python, Pandas, exploratory analysis, lightweight models, and communicating insights with visuals.</p>
+          </div>
+          <div class="card">
+            <h3>Engineering Fundamentals</h3>
+            <p>Data structures, algorithms, relational and non-relational databases, API basics, version control.</p>
+          </div>
+          <div class="card">
+            <h3>Collaboration</h3>
+            <p>Public relations experience, clear documentation, quick feedback loops, and stakeholder updates.</p>
+          </div>
+        </div>
+        <h3 style="margin-top:18px;">Certificates</h3>
+        <div class="certs">
+          <div class="cert">
+            <strong>DataCamp</strong>
+            <span>Certifications in Docker, GitHub, Python, Pandas.</span>
+          </div>
+          <div class="cert">
+            <strong>Docker</strong>
+            <span>Container fundamentals for reproducible environments.</span>
+          </div>
+          <div class="cert">
+            <strong>GitHub</strong>
+            <span>Version control workflows and collaboration.</span>
+          </div>
+          <div class="cert">
+            <strong>Python & Pandas</strong>
+            <span>Data manipulation, analysis, and reporting.</span>
+          </div>
+        </div>
+        <div class="logo-row" aria-label="Certificates">
+          <div class="logo-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/DataCamp_logo.svg" alt="DataCamp logo">
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" data-section="contact">
+        <h2>Contact</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Let us build something</h3>
+            <p>I am open to collaborations that mix engineering, data, and thoughtful product design. Reach out and I will respond quickly.</p>
+            <div class="links">
+              <a class="link" href="mailto:asamanoh@itam.mx" aria-label="Email Andres Samano Hakim">Email me</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <footer>
-      Listo para colaborar en proyectos que combinen ingenieria, datos y experiencia de usuario. Hablemos.
+      Crafted by Andres Samano Hakim — focused on clear tech, data, and impact.
     </footer>
   </div>
+
+  <script>
+    const navButtons = document.querySelectorAll('.nav button');
+    const sections = document.querySelectorAll('.section');
+
+    function activateSection(target) {
+      sections.forEach(sec => {
+        sec.classList.toggle('active', sec.dataset.section === target);
+      });
+      navButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.target === target);
+      });
+    }
+
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', () => activateSection(btn.dataset.target));
+    });
+  </script>
 </body>
 </html>
