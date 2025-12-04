@@ -260,6 +260,59 @@
       box-shadow: var(--shadow);
     }
     .cert strong { display: block; margin-bottom: 6px; }
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+    .lang-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(28, 78, 119, 0.12);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .lang-card h3 { margin: 0 0 10px; }
+    .meter {
+      margin: 8px 0 12px;
+    }
+    .meter-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .meter-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(28, 78, 119, 0.14);
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .meter-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      width: 0;
+    }
+    .skill-icons {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(28, 78, 119, 0.12);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+    }
+    .skill-icons img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
     footer {
       margin-top: 22px;
       color: var(--muted);
@@ -398,42 +451,30 @@
 
       <section class="section" id="skills" data-section="skills">
         <h2>Skill</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Data & Analytics</h3>
-            <p>Python, Pandas, exploratory analysis, lightweight models, and communicating insights with visuals.</p>
+        <div class="skills-layout">
+          <div class="lang-card">
+            <h3>Spoken Languages</h3>
+            <div class="meter">
+              <div class="meter-label"><span>Spanish</span><span>Native</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:100%;"></div></div>
+            </div>
+            <div class="meter">
+              <div class="meter-label"><span>English</span><span>C1</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:85%;"></div></div>
+            </div>
           </div>
-          <div class="card">
-            <h3>Engineering Fundamentals</h3>
-            <p>Data structures, algorithms, relational and non-relational databases, API basics, version control.</p>
-          </div>
-          <div class="card">
-            <h3>Collaboration</h3>
-            <p>Public relations experience, clear documentation, quick feedback loops, and stakeholder updates.</p>
-          </div>
-        </div>
-        <h3 style="margin-top:18px;">Certificates</h3>
-        <div class="certs">
-          <div class="cert">
-            <strong>DataCamp</strong>
-            <span>Certifications in Docker, GitHub, Python, Pandas.</span>
-          </div>
-          <div class="cert">
-            <strong>Docker</strong>
-            <span>Container fundamentals for reproducible environments.</span>
-          </div>
-          <div class="cert">
-            <strong>GitHub</strong>
-            <span>Version control workflows and collaboration.</span>
-          </div>
-          <div class="cert">
-            <strong>Python & Pandas</strong>
-            <span>Data manipulation, analysis, and reporting.</span>
-          </div>
-        </div>
-        <div class="logo-row" aria-label="Certificates">
-          <div class="logo-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/DataCamp_logo.svg" alt="DataCamp logo">
+          <div class="skill-icons" aria-label="Development skills">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg" alt="Cassandra">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/45/Mongodb-logo.png" alt="MongoDB">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/VSCodium-logo.svg" alt="Visual Studio Code">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" alt="Git">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg" alt="Bash">
           </div>
         </div>
       </section>
