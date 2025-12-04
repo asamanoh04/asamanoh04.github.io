@@ -195,6 +195,31 @@
       transition: transform 150ms ease, box-shadow 150ms ease;
     }
     .link:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .socials {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .social {
+      display: inline-flex;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(30, 159, 110, 0.35);
+      box-shadow: var(--shadow);
+      background: rgba(255, 255, 255, 0.92);
+      align-items: center;
+      justify-content: center;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .social:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 14px 30px rgba(0,0,0,0.16); }
+    .social img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     .logo-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -418,6 +443,20 @@
             <p>I'm active on most major social platforms, so feel free to reach out anytime. Whether you have a question, need help, or want to collaborate on a project, I’m always open to connecting. If you send me a message, I’ll do my best to respond within 24 hours. And if you’d like more details about my work, background, or skills, don’t hesitate to contact me. I enjoy meeting new people, exploring fresh ideas, and working with others who share the same interests.</p>
             <div class="links">
               <a class="link" href="mailto:asamanoh@itam.mx" aria-label="Email Andres Samano Hakim">Email me</a>
+            </div>
+            <div class="socials" aria-label="Social links">
+              <a class="social" href="https://github.com/asamanoh04" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+              </a>
+              <a class="social" href="https://www.instagram.com/andres.samano/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+              </a>
+              <a class="social" href="https://www.linkedin.com/in/andres-samano-hakim-3245a6337/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+              </a>
+              <a class="social" href="mailto:andresamano04@gmail.com" aria-label="Gmail">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">
+              </a>
             </div>
           </div>
         </div>
