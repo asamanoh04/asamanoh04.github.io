@@ -171,9 +171,10 @@
       border-radius: var(--radius);
       padding: 18px 18px 16px;
       box-shadow: var(--shadow);
+      color: var(--text);
     }
-    .card h3 { margin: 0 0 6px; font-size: 18px; letter-spacing: -0.01em; }
-    .card p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 17px; }
+    .card h3 { margin: 0 0 6px; font-size: 18px; letter-spacing: -0.01em; color: var(--text); }
+    .card p { margin: 0; color: var(--text); line-height: 1.6; font-size: 17px; }
     .card img.icon {
       width: 48px;
       height: 48px;
@@ -268,8 +269,8 @@
       align-items: center;
     }
     .logo-card {
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(28, 78, 119, 0.12);
+      background: var(--panel);
+      border: 1px solid var(--panel-strong);
       border-radius: var(--radius);
       padding: 12px;
       display: flex;
@@ -290,13 +291,14 @@
       margin-top: 12px;
     }
     .cert {
-      border: 1px solid rgba(28, 78, 119, 0.12);
-      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--panel-strong);
+      background: var(--panel);
       padding: 14px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      color: var(--text);
     }
-    .cert strong { display: block; margin-bottom: 6px; }
+    .cert strong { display: block; margin-bottom: 6px; color: var(--text); }
     .skills-layout {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -304,13 +306,14 @@
       margin-top: 12px;
     }
     .lang-card {
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(28, 78, 119, 0.12);
+      background: var(--panel);
+      border: 1px solid var(--panel-strong);
       border-radius: var(--radius);
       padding: 16px;
       box-shadow: var(--shadow);
+      color: var(--text);
     }
-    .lang-card h3 { margin: 0 0 10px; }
+    .lang-card h3 { margin: 0 0 10px; color: var(--text); }
     .meter {
       margin: 8px 0 12px;
     }
@@ -323,7 +326,7 @@
     .meter-bar {
       height: 10px;
       border-radius: 999px;
-      background: rgba(28, 78, 119, 0.14);
+      background: rgba(28, 78, 119, 0.3);
       overflow: hidden;
       margin-top: 6px;
     }
@@ -333,8 +336,8 @@
       width: 0;
     }
     .skill-icons {
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(28, 78, 119, 0.12);
+      background: var(--panel);
+      border: 1px solid var(--panel-strong);
       border-radius: var(--radius);
       padding: 16px;
       box-shadow: var(--shadow);
